@@ -29,5 +29,5 @@ spec:
     - .metadata.annotations[]? | select(.name == "creation")
   - group: apps
     kind: Secret
-    jsonPointers:
-    - /data/my-password
+    jqPathExpressions:
+    - .data[]? | select(.name == "my-password")
