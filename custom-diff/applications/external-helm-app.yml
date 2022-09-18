@@ -25,8 +25,8 @@ spec:
   ignoreDifferences:
   - group: apps
     kind: Deployment
-    jsonPointers:
-    - /metadata/annotations/creation
+    jqPathExpressions:
+    - .metadata.annotations[]? | select(.name == "creation")
   - group: apps
     kind: Secret
     jsonPointers:
